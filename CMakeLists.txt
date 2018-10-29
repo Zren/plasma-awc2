@@ -24,20 +24,20 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 
 
-add_definitions(-DTRANSLATION_DOMAIN=\"plasma_applet_org.kde.plasma.private.grouping\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasma_applet_com.github.zren.awc2.private\")
 
-plasma_install_package(package org.kde.plasma.private.grouping)
+plasma_install_package(package com.github.zren.awc2.private)
 
 ecm_qt_declare_logging_category(groupingplasmoid_SRCS HEADER debug.h
                                             IDENTIFIER GROUPING_DEBUG
-                                            CATEGORY_NAME kde.grouping
+                                            CATEGORY_NAME zren.awc2
                                             DEFAULT_SEVERITY Info)
 
-add_library(org.kde.plasma.private.grouping MODULE groupingcontainment.cpp ${groupingplasmoid_SRCS})
+add_library(com.github.zren.awc2.private MODULE groupingcontainment.cpp ${groupingplasmoid_SRCS})
 
-kcoreaddons_desktop_to_json(org.kde.plasma.private.grouping package/metadata.desktop)
+kcoreaddons_desktop_to_json(com.github.zren.awc2.private package/metadata.desktop)
 
-target_link_libraries(org.kde.plasma.private.grouping
+target_link_libraries(com.github.zren.awc2.private
                       Qt5::Gui
                       Qt5::Quick
                       Qt5::DBus
@@ -46,6 +46,6 @@ target_link_libraries(org.kde.plasma.private.grouping
                       KF5::XmlGui
                       KF5::I18n)
 
-install(TARGETS org.kde.plasma.private.grouping DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
+install(TARGETS com.github.zren.awc2.private DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
 
 add_subdirectory(container)

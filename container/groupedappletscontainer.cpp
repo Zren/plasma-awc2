@@ -81,7 +81,7 @@ void GroupedAppletsContainer::ensureSystrayExists()
     }
 
     if (!m_innerContainment) {
-        m_innerContainment = c->createContainment(QStringLiteral("org.kde.plasma.private.grouping"), QVariantList() << QStringLiteral("org.kde.plasma:force-create"));
+        m_innerContainment = c->createContainment(QStringLiteral("com.github.zren.awc2.private"), QVariantList() << QStringLiteral("org.kde.plasma:force-create"));
         config().writeEntry("ContainmentId", m_innerContainment->id());
     }
 
